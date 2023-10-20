@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../NTI"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"functions.h": "c",
+			"conio.h": "c",
+			"stdlib.h": "c",
+			"string.h": "c",
+			"time.h": "c"
+		}
+	}
+}
