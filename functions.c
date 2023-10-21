@@ -88,20 +88,30 @@ student_t *create_student_node(void)
         printf("ERROR!!!");
         return 0;
     }
-    printf("Enter the name of the student\n");
-    scanf("%s", &new_student->name);
-    printf("Enter the birthdate of the student\n");
-    scanf("%s", &new_student->birth_date);
-    printf("Enter the address of the student\n");
-    scanf("%s", &new_student->address);
-    printf("Enter the phone number of the student\n");
+
+    printf("Enter the name of the student: ");
+    fgets(new_student->name, sizeof(new_student->name), stdin);
+    new_student->name[strcspn(new_student->name, "\n")] = '\0'; // Remove the trailing newline
+
+    printf("Enter the birthdate of the student: ");
+    fgets(new_student->birth_date, sizeof(new_student->birth_date), stdin);
+    new_student->birth_date[strcspn(new_student->birth_date, "\n")] = '\0';
+
+    printf("Enter the address of the student: ");
+    fgets(new_student->address, sizeof(new_student->address), stdin);
+    new_student->address[strcspn(new_student->address, "\n")] = '\0';
+
+    printf("Enter the phone number of the student: ");
     scanf("%ld", &new_student->phone_number);
+
     new_student->id = id;
     new_student->mark = 0;
     id++;
     new_student->next = NULL;
+
     return new_student;
 }
+
 void delete_student(student_t **head)
 {
     if (*head == NULL)

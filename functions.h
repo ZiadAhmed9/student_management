@@ -2,11 +2,11 @@
 
 typedef struct student
 {
-    char name[10];
+    char name[50];
     int id;
     char birth_date[10];
     char address[100];
-    long phone_number;
+    long long phone_number;
     int mark;
     struct student *next;
 } student_t;
